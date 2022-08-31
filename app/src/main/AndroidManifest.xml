@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NaverMovieSearchApp">
         <activity
-            android:name="com.flowassignment.navermoviesearchapp.MainActivity"
+            android:name="com.flowassignment.navermoviesearchapp.ui.main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
