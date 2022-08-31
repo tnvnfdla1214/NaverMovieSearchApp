@@ -5,5 +5,5 @@ data class Movie(
     val link: String,
     val image: String?,
     val pubDate: String?,
-    val userRating: Double,
+    val userRating: String,
 )
