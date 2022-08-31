@@ -3,7 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
-
+        <variable
+            name="model"
+            type="com.flowassignment.navermoviesearchapp.domain.entity.Movie" />
     </data>
 
     <LinearLayout
@@ -18,6 +20,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0"
             android:src="@mipmap/ic_launcher"
+            app:setImage="@{model.image}"
             />
 
         <LinearLayout
@@ -47,7 +50,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
-                    android:text="라이크 더 윈스 아이 유스드 투 노우"
+                    android:text="@{model.title}"
                     />
             </LinearLayout>
 
@@ -69,7 +72,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
-                    android:text="2021"
+                    app:setuserpubDate="@{model.pubDate}"
                     />
             </LinearLayout>
 
@@ -90,7 +93,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
-                    android:text="0.00"
+                    android:text="@{model.userRating}"
                     />
             </LinearLayout>
 
