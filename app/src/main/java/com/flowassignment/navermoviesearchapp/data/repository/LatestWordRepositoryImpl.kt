@@ -16,10 +16,11 @@ class LatestWordRepositoryImpl(
         withContext(ioDispatcher) {
             try {
                 val response = latestWordDao.getAll()
-                val result: List<String> = response.map {
-                    it.word
+                if (response.isEmpty()) DataResult.Error("서버와 연결 오류")
+                else {
+                    val result: List<String> = response.map { it.word }
+                    DataResult.Success(result)
                 }
-                DataResult.Success(result)
             } catch (e: Exception) {
                 DataResult.Error("서버와 연결 오류")
             }

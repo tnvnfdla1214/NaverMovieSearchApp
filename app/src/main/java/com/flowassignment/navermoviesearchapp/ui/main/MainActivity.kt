@@ -1,13 +1,16 @@
 package com.flowassignment.navermoviesearchapp.ui.main
 
+import android.app.Activity
 import android.content.Intent
 import android.net.Uri
-import android.util.Log
+import androidx.activity.result.contract.ActivityResultContracts
 import com.flowassignment.navermoviesearchapp.R
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.flowassignment.navermoviesearchapp.databinding.ActivityMainBinding
 import com.flowassignment.navermoviesearchapp.ui.base.BaseActivity
+import com.flowassignment.navermoviesearchapp.ui.latest.LatestActivity
+import com.flowassignment.navermoviesearchapp.ui.latest.LatestWordAdapter.Companion.KEY_WORD
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -31,6 +34,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
             viewModel.getMovieList(keyword)
             viewModel.getWord()
         }
+        binding.latestButton.setOnClickListener {
+            latestActivityLauncher.launch(
+                Intent(this, LatestActivity::class.java)
+            )
+        }
     }
 
     private fun observeViewModel() {
@@ -50,5 +58,16 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
         }
         binding.searchRV.adapter = movieAdapter
     }
+
+    private val latestActivityLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val word =
+                    result.data?.getStringExtra(LatestActivity.KEY_WORD) ?: ""
+
+                binding.searchEditText.setText(word)
+                viewModel.getMovieList(word)
+            }
+        }
 
 }

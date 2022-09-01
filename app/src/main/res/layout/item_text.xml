@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
-
+        <variable name="word" type="String" />
     </data>
 
     <LinearLayout
@@ -18,7 +18,7 @@
             android:layout_height="match_parent"
             android:textAlignment="center"
             android:gravity="center"
-            android:text="안녕하세요asdasd"
+            android:text="@{word}"
             android:textStyle="bold"
             android:textSize="15dp"
             android:layout_marginStart="5dp"
