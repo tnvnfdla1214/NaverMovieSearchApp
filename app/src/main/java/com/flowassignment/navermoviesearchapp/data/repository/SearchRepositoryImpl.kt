@@ -6,7 +6,7 @@ import com.flowassignment.navermoviesearchapp.data.remote.url.SearchMovieUrl
 import com.flowassignment.navermoviesearchapp.domain.entity.DataResult
 import com.flowassignment.navermoviesearchapp.domain.entity.Movie
 import com.flowassignment.navermoviesearchapp.domain.mapper.MoviewMapper
-import com.flowassignment.navermoviesearchapp.domain.repository.SearchRepository
+import com.flowassignment.navermoviesearchapp.domain.repository.search.SearchRepository
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 

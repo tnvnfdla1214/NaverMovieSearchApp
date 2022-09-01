@@ -29,6 +29,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
         binding.searchButton.setOnClickListener {
             val keyword = binding.searchEditText.text.toString()
             viewModel.getMovieList(keyword)
+            viewModel.getWord()
         }
     }
 
