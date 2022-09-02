@@ -1,6 +1,7 @@
 package com.flowassignment.navermoviesearchapp.data.remote.spec
 
 import com.google.gson.annotations.SerializedName
+import java.util.*
 
 class MovieSearchRes(
     @SerializedName("items") var items: Array<Items>
@@ -12,9 +13,9 @@ class MovieSearchRes(
         val link: String,
         @SerializedName("image")
         val image: String,
-        @SerializedName("pubdate")
+        @SerializedName("pubDate")
         val pubDate: String,
         @SerializedName("userRating")
-        val userRating: Double
+        val userRating: String
     )
 }

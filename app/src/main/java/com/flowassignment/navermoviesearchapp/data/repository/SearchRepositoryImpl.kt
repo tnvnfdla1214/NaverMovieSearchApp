@@ -18,10 +18,10 @@ class SearchRepositoryImpl(
         withContext(ioDispatcher) {
             try {
                 val response =
-                    api.getSearch(SearchMovieUrl.Client_Id, SearchMovieUrl.clientPw, keyward).execute().body()
+                    api.getSearch(SearchMovieUrl.Client_Id, SearchMovieUrl.clientPw, keyward)
+                        .execute().body()
                 when {
                     response == null -> {
-                        Log.d("민규","1")
                         DataResult.Error("서버와 연결 오류")
                     }
                     response.items.isEmpty() -> {
@@ -29,13 +29,14 @@ class SearchRepositoryImpl(
                     }
                     else -> {
                         val result: List<Movie> = response.items.map {
+                            Log.d("임민규",it.toString())
                             MoviewMapper.MovieResToMovie(it)
                         }
                         DataResult.Success(result)
                     }
                 }
             } catch (e: Exception) {
-                Log.e("민규",e.toString())
+                Log.e("민규", e.toString())
                 DataResult.Error("서버와 연결 오류")
             }
         }

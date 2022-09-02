@@ -46,8 +46,4 @@ class LatestWordAdapter(
         }
     }
 
-    companion object {
-        const val KEY_WORD = "KEY_WORD"
-    }
-
 }
