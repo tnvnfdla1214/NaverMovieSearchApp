@@ -10,6 +10,6 @@ object MoviewMapper {
             link = items.link,
             image = items.image,
             pubDate = items.pubDate,
-            userRating = items.userRating.toString()
+            userRating = items.userRating
         )
 }

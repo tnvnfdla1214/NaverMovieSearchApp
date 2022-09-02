@@ -3,6 +3,7 @@ package com.flowassignment.navermoviesearchapp.ui.main
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
+import android.util.Log
 import androidx.activity.result.contract.ActivityResultContracts
 import com.flowassignment.navermoviesearchapp.R
 import androidx.activity.viewModels
@@ -10,7 +11,6 @@ import androidx.lifecycle.lifecycleScope
 import com.flowassignment.navermoviesearchapp.databinding.ActivityMainBinding
 import com.flowassignment.navermoviesearchapp.ui.base.BaseActivity
 import com.flowassignment.navermoviesearchapp.ui.latest.LatestActivity
-import com.flowassignment.navermoviesearchapp.ui.latest.LatestWordAdapter.Companion.KEY_WORD
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
