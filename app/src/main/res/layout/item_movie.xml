@@ -49,6 +49,7 @@
                     android:textSize="15dp"
                     android:text="제목 :"
                     android:layout_marginEnd="5dp"
+                    android:textColor="@color/black"
                     />
                 <TextView
                     android:id="@+id/movie_title"
@@ -56,6 +57,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
                     android:text="@{model.title}"
+                    android:textColor="@color/black"
                     />
             </LinearLayout>
 
@@ -72,6 +74,7 @@
                     android:textSize="15dp"
                     android:text="출시 :"
                     android:layout_marginEnd="5dp"
+                    android:textColor="@color/black"
                     />
                 <TextView
                     android:id="@+id/movie_pubDate"
@@ -79,6 +82,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
                     android:text="@{model.pubDate}"
+                    android:textColor="@color/black"
                     />
             </LinearLayout>
 
@@ -94,6 +98,7 @@
                     android:textSize="15dp"
                     android:text="평점 :"
                     android:layout_marginEnd="5dp"
+                    android:textColor="@color/black"
                     />
                 <TextView
                     android:id="@+id/movie_userRating"
@@ -101,6 +106,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
                     android:text="@{model.userRating}"
+                    android:textColor="@color/black"
                     />
             </LinearLayout>
 

@@ -29,8 +29,9 @@ class SearchRepositoryImpl(
                     }
                     else -> {
                         val result: List<Movie> = response.items.map {
-                            Log.d("임민규",it.toString())
-                            MoviewMapper.MovieResToMovie(it)
+                            var title = it.title.replace("<b>", "")
+                            title = title.replace("</b>", "")
+                            MoviewMapper.MovieResToMovie(it, title)
                         }
                         DataResult.Success(result)
                     }
